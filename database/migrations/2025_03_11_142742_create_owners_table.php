@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('tipoDoc');
-            $table->string('numDoc');
-            $table->string('nombre1');
-            $table->string('nombre2')->nullable();
-            $table->string('apellido1');
-            $table->string('apellido2')->nullable();
+            $table->string('docType');
+            $table->string('docNum');
+            $table->string('fname');
+            $table->string('fname2')->nullable();
+            $table->string('sname1');
+            $table->string('sname2')->nullable();
         });
     }
 

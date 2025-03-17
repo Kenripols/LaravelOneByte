@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
-            $table->string('nombre');
-            $table->string('tipo');
-            $table->date('fechaNac');
+            $table->string('photo');
+            $table->string('name');
+            $table->string('type');
+            $table->date('bdate');
             //Clave foranea de Raza
             $table->unsignedBigInteger('breed_id');
             $table->foreign('breed_id')->references('id')->on('breeds');

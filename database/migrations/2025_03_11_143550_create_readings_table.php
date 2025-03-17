@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('readings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('celular');
-            $table->dateTime('fechaHora');
+            $table->unsignedBigInteger('cellphone');
+            $table->dateTime('dateTime');
             $table->timestamps();
             $table->unsignedBigInteger('QRPlate_id');
             $table->foreign('QRPlate_id')->references('id')->on('q_r_plates');

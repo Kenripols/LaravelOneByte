@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('q_r_plates', function (Blueprint $table) {
             $table->id();
-            $table->date('fechaIni');
-            $table->date('fechaFin');
+            $table->date('iDate');
+            $table->date('eDate');
             $table->timestamps();
             $table->unsignedBigInteger('pet_id');
             $table->foreign('pet_id')->references('id')->on('pets');
