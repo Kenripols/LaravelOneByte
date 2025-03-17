@@ -10,6 +10,6 @@ class Breed extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tamanio', 'nombreRaza'
+        'size', 'breedName'
     ];
 }

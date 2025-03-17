@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Owner extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'user_id'; // Define la clave primaria
+    
     /*
     Asignar que tabla va a manejar
     */
@@ -29,13 +33,17 @@ class Owner extends Model
     }
     //Asignación masiva
     protected $fillable = [
-        'tipoDoc', 'numDoc', 'nombre1', 'nombre2', 'apellido1', 'apellido2'
-        
+        'docType', 'docNum', 'fname1', 'fname2', 'sname1', 'sname2', 'user_id'
                 ];
 
                 //Especifico la relacion de uno a N
     public function pets()
     {
         return $this->hasMany(Pet::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

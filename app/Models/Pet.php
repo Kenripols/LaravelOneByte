@@ -9,12 +9,12 @@ class Pet extends Model
     use HasFactory;
 
     protected $fillable = [
-        'foto', 'nombre', 'tipo', 'fechaNac', 'idRaza', 'titular_id'
+        'photo', 'name', 'type', 'bDate', 'breed_id', 'owner_id'
     ];
 
     public function Breeds()
     {
-        return $this->hasMany(Breed::class);
+        return $this->hasOne(Breed::class);
         
     }
 
