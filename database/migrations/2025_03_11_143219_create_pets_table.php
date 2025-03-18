@@ -15,14 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('photo');
             $table->string('name');
-            $table->string('type');
             $table->date('bDate');
             //Clave foranea de Breed (Raza)
             $table->unsignedBigInteger('breed_id');
             $table->foreign('breed_id')->references('id')->on('breeds');
             //Clave foranea de Owner (Dueño)
-            $table->unsignedBigInteger('owner_id')->nullable(false);
-            $table->foreign('owner_id')->references('user_id')->on('owners');
+            //$table->unsignedBigInteger('owner_id');
+            $table->foreignid('owner_id')->references('user_id')->on('owners');
             $table->timestamps();
         });
     }

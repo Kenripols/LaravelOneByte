@@ -11,7 +11,7 @@ class Owner extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id'; // Define la clave primaria
+    protected $primaryKey = 'user_id'; // Defino la clave primaria
     
     /*
     Asignar que tabla va a manejar
@@ -33,7 +33,7 @@ class Owner extends Model
     }
     //Asignación masiva
     protected $fillable = [
-        'docType', 'docNum', 'fname1', 'fname2', 'sname1', 'sname2', 'user_id'
+        'docType', 'docNum', 'fname1', 'fname2', 'sname1', 'sname2'
                 ];
 
                 //Especifico la relacion de uno a N
@@ -42,8 +42,5 @@ class Owner extends Model
         return $this->hasMany(Pet::class);
     }
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
+    
 }

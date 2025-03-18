@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('readings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cellPhone');
+            $table->string('cellPhone');
             $table->dateTime('dateTime');
             $table->timestamps();
             $table->unsignedBigInteger('QRPlate_id');
