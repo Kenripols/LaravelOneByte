@@ -9,7 +9,7 @@ class Pet extends Model
     use HasFactory;
 
     protected $fillable = [
-        'photo', 'name', 'type', 'bDate', 'breed_id', 'owner_id'
+        'photo', 'name', 'bDate', 'breed_id', 'owner_id'
     ];
 
     public function Breeds()
