@@ -22,7 +22,6 @@ class PetFactory extends Factory
         return [
             'photo' => $this->faker->imageUrl(),
             'name' => $this->faker->firstName(),
-            'type' => $this->faker->word,
             'bDate' => $this->faker->date(),
             'breed_id'=>Breed::factory(), //Aqui se asocia una raza a la Mascota
             'owner_id' => Owner::factory(), // Aquí se asocia un Titular a la Mascota
